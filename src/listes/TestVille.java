@@ -1,6 +1,7 @@
 package listes;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.Locale;
 import java.util.function.Consumer;
@@ -29,9 +30,14 @@ public class TestVille {
                 ville.setNom(ville.getNom().toUpperCase(Locale.ROOT));
         });
 
-        for (Ville ville : villes) {
+        for (Ville ville : villes)
             System.out.println(ville);
-        }
+
+        villes.sort(new ComparatorHabitant());
+
+        System.out.println("Tri effectué");
+        for (Ville ville : villes)
+            System.out.println(ville);
 
     }
 
